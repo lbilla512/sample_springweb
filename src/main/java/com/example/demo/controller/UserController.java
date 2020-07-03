@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 //import com.example.learning.model.UserInfo;
-import com.example.demo.util.UserService;
+import com.example.demo.util.IUserService;
 
 @RestController
 @RequestMapping(path = "/users")
 public class UserController {	
-	private final UserService userService;
+	private final IUserService userService;
 	 
-    public UserController(UserService courseService) {
+    public UserController(IUserService courseService) {
         this.userService = courseService;
     }
 	

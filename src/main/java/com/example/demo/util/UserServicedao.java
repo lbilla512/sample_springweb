@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 //import com.example.learning.model.UserInfo;
 
 @Service
-public class UserServicedao {
+public class UserServicedao implements IUserServicedao{
 
 	/**private static final Map<String, UserInfo> USERS_MAP = new ConcurrentHashMap<>();
 
@@ -25,6 +25,7 @@ public class UserServicedao {
 	public UserInfo getUserInfo(String firstName) {
 		return USERS_MAP.get(firstName);
 	}*/
+	@Override
 	public String getUserInfo(String firstName) {
 		return firstName+"dao";
 	}

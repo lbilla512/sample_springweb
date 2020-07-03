@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 //import com.example.learning.model.UserInfo;
 
 @Service
-public class UserService {
-	private final UserServicedao userServicedao;
+public class UserService implements IUserService{
+	private final IUserServicedao userServicedao;
 
-	UserService(UserServicedao userServicedao) {
+	UserService(IUserServicedao userServicedao) {
 		this.userServicedao = userServicedao;
 	}
 
@@ -28,6 +28,7 @@ public class UserService {
 	 * public UserInfo getUserInfo(String firstName) { return
 	 * USERS_MAP.get(firstName); }
 	 */
+	@Override
 	public String getUserInfo(String firstName) {
 		return userServicedao.getUserInfo(firstName);
 	}
